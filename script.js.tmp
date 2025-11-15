@@ -1,0 +1,222 @@
+// Main initialization
+document.addEventListener('DOMContentLoaded', () => {
+    // Initialize all features
+    const currentPage = getCurrentPage();
+    
+    // Always initialize mobile menu
+    initializeMobileMenu();
+    
+    // Initialize page-specific features
+    if (currentPage === 'menu') {
+        initializeMenuFunctionality();
+    } else if (currentPage === 'contact') {
+        initializeContactForm();
+    }
+    
+    // Initialize card animations if there are any cards
+    if (document.querySelector('.card')) {
+        initializeCardAnimations();
+    }
+});
+
+// Helper function to determine current page
+function getCurrentPage() {
+    const path = window.location.pathname;
+    if (path.includes('menu.html')) return 'menu';
+    if (path.includes('contact.html')) return 'contact';
+    return 'home';
+}
+
+// Menu page functionality
+function initializeMenuFunctionality() {
+    const menuSearch = document.getElementById('menuSearch');
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const menuItems = document.querySelectorAll('.menu-item');
+
+    if (!menuSearch) return;
+
+    // Search functionality
+    menuSearch.addEventListener('input', (e) => {
+        const searchTerm = e.target.value.toLowerCase();
+        
+        menuItems.forEach(item => {
+            const title = item.querySelector('h4')?.textContent.toLowerCase() || '';
+            const description = item.querySelector('p')?.textContent.toLowerCase() || '';
+            
+            if (title.includes(searchTerm) || description.includes(searchTerm)) {
+                item.style.display = 'flex';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+    });
+
+    // Filter functionality
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const selectedCategory = btn.getAttribute('data-category');
+            
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            document.querySelectorAll('.menu-category').forEach(category => {
+                if (selectedCategory === 'all' || category.getAttribute('data-category') === selectedCategory) {
+                    category.style.display = 'block';
+                } else {
+                    category.style.display = 'none';
+                }
+            });
+        });
+    });
+}
+
+// Mobile menu functionality
+function initializeMobileMenu() {
+    const hamburger = document.querySelector('.hamburger');
+    const navUl = document.querySelector('nav ul');
+    const navLinks = document.querySelectorAll('nav ul li a');
+
+    if (!hamburger || !navUl) return;
+
+    hamburger.addEventListener('click', (e) => {
+        e.stopPropagation();
+        navUl.classList.toggle('active');
+        hamburger.classList.toggle('active');
+    });
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            navUl.classList.remove('active');
+            hamburger.classList.remove('active');
+        });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (navUl.classList.contains('active') && 
+            !e.target.closest('.hamburger') && 
+            !e.target.closest('nav ul')) {
+            navUl.classList.remove('active');
+            hamburger.classList.remove('active');
+        }
+    });
+}
+
+// Card animations
+function initializeCardAnimations() {
+    const cards = document.querySelectorAll('.card');
+    if (!cards.length) return;
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        },
+        { threshold: 0.2 }
+    );
+
+    cards.forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        observer.observe(card);
+    });
+}
+
+// Contact form functionality
+function initializeContactForm() {
+    const form = document.querySelector('.contact-form form');
+    if (!form) return;
+
+    const showError = (input, message) => {
+        const errorDiv = input.nextElementSibling || document.createElement('div');
+        errorDiv.className = 'error-message';
+        errorDiv.textContent = message;
+        errorDiv.style.display = 'block';
+        
+        if (!input.nextElementSibling) {
+            input.parentNode.insertBefore(errorDiv, input.nextSibling);
+        }
+        
+        input.classList.add('invalid');
+    };
+
+    const hideError = (input) => {
+        const errorDiv = input.nextElementSibling;
+        if (errorDiv && errorDiv.classList.contains('error-message')) {
+            errorDiv.style.display = 'none';
+        }
+        input.classList.remove('invalid');
+    };
+
+    const validateField = (input) => {
+        hideError(input);
+        
+        if (input.required && !input.value.trim()) {
+            showError(input, 'This field is required');
+            return false;
+        }
+        
+        if (input.type === 'email' && input.value) {
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(input.value)) {
+                showError(input, 'Please enter a valid email address');
+                return false;
+            }
+        }
+        
+        if (input.minLength && input.value.length < input.minLength) {
+            showError(input, `Must be at least ${input.minLength} characters`);
+            return false;
+        }
+
+        return true;
+    };
+
+    // Real-time validation
+    form.querySelectorAll('input, textarea').forEach(input => {
+        input.addEventListener('blur', () => validateField(input));
+        input.addEventListener('input', () => {
+            if (input.classList.contains('invalid')) {
+                validateField(input);
+            }
+        });
+    });
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        let isValid = true;
+
+        // Validate all fields
+        form.querySelectorAll('input, textarea').forEach(input => {
+            if (!validateField(input)) {
+                isValid = false;
+            }
+        });
+
+        if (isValid) {
+            const submitBtn = form.querySelector('button[type="submit"]');
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+
+            try {
+                // Simulate form submission (replace with actual API call)
+                await new Promise(resolve => setTimeout(resolve, 1000));
+                
+                form.innerHTML = `
+                    <div class="success-message">
+                        <h3>Message Sent Successfully!</h3>
+                        <p>Thank you for contacting us. We'll get back to you soon.</p>
+                    </div>
+                `;
+            } catch (error) {
+                console.error('Form submission error:', error);
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send Message';
+                alert('Sorry, there was an error sending your message. Please try again later.');
+            }
+        }
+    });
+}

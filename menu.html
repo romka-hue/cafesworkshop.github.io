@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore our delicious menu featuring artisanal coffee, refreshing beverages, and homemade pastries. From espresso to cold brew, we have something for every coffee lover.">
+    <title>Our Menu - Cafe & Workshop</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="source/favicon.ico">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html">Cafe & Workshop</a>
+            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="index.html#workshops">Workshops</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="menu-page">
+            <div class="menu-search">
+                <input type="text" id="menuSearch" placeholder="Search our menu...">
+                <div class="menu-filters">
+                    <button class="filter-btn active" data-category="all">All</button>
+                    <button class="filter-btn" data-category="hot-coffee">Hot Coffee</button>
+                    <button class="filter-btn" data-category="cold-coffee">Cold Coffee</button>
+                    <button class="filter-btn" data-category="pastries">Pastries</button>
+                </div>
+            </div>
+            <h2>Our Full Menu</h2>
+            <div class="menu-grid">
+                <div class="menu-category" data-category="hot-coffee">
+                    <h3>Hot Coffees</h3>
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="https://images.unsplash.com/photo-1510707577719-ae7c14805e3a?w=400&q=80" alt="Espresso">
+                        </div>
+                        <div class="menu-item-content">
+                            <h4>Espresso</h4>
+                            <p>A classic shot of concentrated coffee.</p>
+                            <span class="price">$2.50</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="https://images.unsplash.com/photo-1580661869408-55ab23f2ca6e?w=400&q=80" alt="Americano">
+                        </div>
+                        <div class="menu-item-content">
+                            <h4>Americano</h4>
+                            <p>Espresso with hot water, perfectly balanced for a smooth experience.</p>
+                            <span class="price">$3.00</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="https://images.unsplash.com/photo-1570968915860-54d5c301fa9f?w=400&q=80" alt="Latte">
+                        </div>
+                        <div class="menu-item-content">
+                            <h4>Latte</h4>
+                            <p>Espresso with steamed milk and a delicate layer of silky foam.</p>
+                            <span class="price">$4.00</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="https://images.unsplash.com/photo-1534778101976-62847782c213?w=400&q=80" alt="Cappuccino">
+                        </div>
+                        <div class="menu-item-content">
+                            <h4>Cappuccino</h4>
+                            <p>Espresso with equal parts steamed milk and rich, velvety foam.</p>
+                            <span class="price">$4.00</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="https://images.unsplash.com/photo-1578631473079-e0208df2df9e?w=400&q=80" alt="Mocha">
+                        </div>
+                        <div class="menu-item-content">
+                            <h4>Mocha</h4>
+                            <p>Espresso with premium chocolate and steamed milk, topped with cocoa.</p>
+                            <span class="price">$4.50</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-category" data-category="cold-coffee">
+                    <h3>Cold Coffees</h3>
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="https://images.unsplash.com/photo-1517959105821-eaf2591984ca?w=400&q=80" alt="Iced Coffee">
+                        </div>
+                        <div class="menu-item-content">
+                            <h4>Iced Coffee</h4>
+                            <p>Premium coffee chilled to perfection, served over crystal-clear ice.</p>
+                            <span class="price">$3.50</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="https://images.unsplash.com/photo-1578324927429-3a33f906e500?w=400&q=80" alt="Iced Latte">
+                        </div>
+                        <div class="menu-item-content">
+                            <h4>Iced Latte</h4>
+                            <p>Smooth espresso and chilled milk over ice, a refreshing classic.</p>
+                            <span class="price">$4.50</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=400&q=80" alt="Cold Brew">
+                        </div>
+                        <div class="menu-item-content">
+                            <h4>Cold Brew</h4>
+                            <p>Slow-steeped for 12 hours, creating a smooth and rich flavor profile.</p>
+                            <span class="price">$4.00</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="https://images.unsplash.com/photo-1586917049334-b95936c9f449?w=400&q=80" alt="Frappuccino">
+                        </div>
+                        <div class="menu-item-content">
+                            <h4>Frappuccino</h4>
+                            <p>Blended ice coffee perfection with your choice of flavors and toppings.</p>
+                            <span class="price">$5.00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-category" data-category="pastries">
+                    <h3>Pastries & Cakes</h3>
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=400&q=80" alt="Croissant">
+                        </div>
+                        <div class="menu-item-content">
+                            <h4>Croissant</h4>
+                            <p>Handmade buttery croissant with perfectly flaky layers, baked fresh daily.</p>
+                            <span class="price">$3.00</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400&q=80" alt="Chocolate Cake">
+                        </div>
+                        <div class="menu-item-content">
+                            <h4>Chocolate Cake</h4>
+                            <p>Triple-layer chocolate cake with rich ganache and chocolate shavings.</p>
+                            <span class="price">$5.00</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="https://images.unsplash.com/photo-1533134242443-d4fd215305ad?w=400&q=80" alt="Cheesecake">
+                        </div>
+                        <div class="menu-item-content">
+                            <h4>Cheesecake</h4>
+                            <p>New York style cheesecake with a graham cracker crust and seasonal berries.</p>
+                            <span class="price">$5.50</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="https://images.unsplash.com/photo-1607958996333-41783c11a63c?w=400&q=80" alt="Muffin">
+                        </div>
+                        <div class="menu-item-content">
+                            <h4>Muffin</h4>
+                            <p>Freshly baked muffins in blueberry, chocolate chip, and banana nut flavors.</p>
+                            <span class="price">$3.50</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Cafe & Workshop. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
