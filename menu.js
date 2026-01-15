@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
         allBtn.className = 'btn-cat active';
         allBtn.textContent = 'All';
         allBtn.setAttribute('data-cat', 'all');
+        allBtn.setAttribute('data-i18n', 'menu.categories.all');
         btnWrap.appendChild(allBtn);
 
         categories.forEach(cat => {
@@ -40,10 +41,26 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.className = 'btn-cat';
             btn.textContent = title;
             btn.setAttribute('data-cat', id);
+            btn.setAttribute('data-i18n', `menu.categories.${id}`);
             btnWrap.appendChild(btn);
         });
 
         menuToc.appendChild(btnWrap);
+
+        // add an empty-state message (hidden when there are visible categories)
+        const emptyEl = document.createElement('div');
+        emptyEl.className = 'menu-empty hidden';
+        emptyEl.setAttribute('data-i18n', 'menu.noResults');
+        emptyEl.textContent = 'No items found';
+        menuToc.appendChild(emptyEl);
+
+        function updateEmptyState() {
+            const visible = categories.some(c => !c.classList.contains('hidden'));
+            emptyEl.classList.toggle('hidden', visible);
+        }
+
+        // ensure dynamically created buttons are translated according to saved language
+        if (window.applyLanguage) window.applyLanguage(localStorage.getItem('site-lang') || 'en');
 
         // Filtering behavior
         btnWrap.addEventListener('click', (e) => {
@@ -57,6 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const cat = clicked.getAttribute('data-cat');
             if (cat === 'all') {
                 categories.forEach(c => c.classList.remove('hidden'));
+                updateEmptyState();
             } else {
                 categories.forEach(c => {
                     if ((c.id && c.id === cat) || (c.querySelector('h2') && c.querySelector('h2').textContent === clicked.textContent)) {
@@ -69,6 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 // scroll to the visible category for easier navigation
                 const firstVisible = document.querySelector('.menu-category:not(.hidden)');
                 if (firstVisible) firstVisible.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                updateEmptyState();
             }
         });
     }

@@ -12,31 +12,34 @@
     <nav>
         <div class="logo"><img src="./source/logo-transperent.png" alt="sherekilebi"></div>
         <ul>
-            <li><a href="index.html#home">Home</a></li>
-            <li><a href="index.html#about">About</a></li>
-            <li><a href="menu.html">Menu</a></li>
-            <li><a href="index.html#contact">Contact</a></li>
+            <li><a href="index.html#home" data-i18n="nav.home">Home</a></li>
+            <li><a href="index.html#about" data-i18n="nav.about">About</a></li>
+            <li><a href="menu.html" data-i18n="nav.menu">Menu</a></li>
+            <li><a href="index.html#contact" data-i18n="nav.contact">Contact</a></li>
         </ul>
+        <button class="lang-toggle" aria-label="Toggle language">EN</button>
     </nav>
 
     <section class="menu-hero">
-        <h1>Our Menu</h1>
-        <p>Authentic Georgian Cuisine</p>
-    </section>
+        <h1 data-i18n="menu.hero.title">Our Menu</h1>
+        <p data-i18n="menu.hero.subtitle">Authentic Georgian Cuisine</p>
+    </section> 
+
+    <div class="menu-toc" aria-hidden="false"></div>
 
     <section class="full-menu">
         <div class="menu-category" id="appetizers">
-            <h2>Appetizers</h2>
+            <h2 data-i18n="menu.categories.appetizers">Appetizers</h2>
             <div class="menu-items">
                 <div class="menu-item">
                     <div class="menu-card">
                         <img src="./source/3menu.jpg" alt="Pkhali">
                         <div class="menu-card-content">
                             <div class="item-header">
-                                <h3>Pkhali</h3>
-                                <span class="price">$8</span>
+                                <h3 data-i18n="menu.items.pkhali.name">Pkhali</h3>
+                                <span class="price" data-i18n="menu.items.pkhali.price">$8</span>
                             </div>
-                            <p>Traditional Georgian vegetable pâté with walnuts and spices</p>
+                            <p data-i18n="menu.items.pkhali.desc">Traditional Georgian vegetable pâté with walnuts and spices</p>
                         </div>
                     </div>
                 </div>
@@ -45,10 +48,10 @@
                         <img src="./source/2menu.jpg" alt="Badrijani Nigvzit">
                         <div class="menu-card-content">
                             <div class="item-header">
-                                <h3>Badrijani Nigvzit</h3>
-                                <span class="price">$10</span>
+                                <h3 data-i18n="menu.items.badrijani.name">Badrijani Nigvzit</h3>
+                                <span class="price" data-i18n="menu.items.badrijani.price">$10</span>
                             </div>
-                            <p>Fried eggplant rolls with walnut paste and pomegranate</p>
+                            <p data-i18n="menu.items.badrijani.desc">Fried eggplant rolls with walnut paste and pomegranate</p>
                         </div>
                     </div>
                 </div>
@@ -56,17 +59,17 @@
         </div>
 
         <div class="menu-category" id="main-courses">
-            <h2>Main Courses</h2>
+            <h2 data-i18n="menu.categories.main-courses">Main Courses</h2>
             <div class="menu-items">
                 <div class="menu-item">
                     <div class="menu-card">
                         <img src="./source/menu.jpg" alt="Khachapuri">
                         <div class="menu-card-content">
                             <div class="item-header">
-                                <h3>Khachapuri</h3>
-                                <span class="price">$14</span>
+                                <h3 data-i18n="menu.items.khachapuri.name">Khachapuri</h3>
+                                <span class="price" data-i18n="menu.items.khachapuri.price">$14</span>
                             </div>
-                            <p>Traditional cheese-filled bread with butter and egg</p>
+                            <p data-i18n="menu.items.khachapuri.desc">Traditional cheese-filled bread with butter and egg</p>
                         </div>
                     </div>
                 </div>
@@ -75,10 +78,10 @@
                         <img src="./source/1menu.jpg" alt="Khinkali">
                         <div class="menu-card-content">
                             <div class="item-header">
-                                <h3>Khinkali</h3>
-                                <span class="price">$16</span>
+                                <h3 data-i18n="menu.items.khinkali.name">Khinkali</h3>
+                                <span class="price" data-i18n="menu.items.khinkali.price">$16</span>
                             </div>
-                            <p>Georgian dumplings filled with spiced meat and broth</p>
+                            <p data-i18n="menu.items.khinkali.desc">Georgian dumplings filled with spiced meat and broth</p>
                         </div>
                     </div>
                 </div>
@@ -87,10 +90,10 @@
                         <img src="./source/1menu.jpg" alt="Chicken Wings">
                         <div class="menu-card-content">
                             <div class="item-header">
-                                <h3>Chicken Wings</h3>
-                                <span class="price">$10</span>
+                                <h3 data-i18n="menu.items.chicken.name">Chicken Wings</h3>
+                                <span class="price" data-i18n="menu.items.chicken.price">$10</span>
                             </div>
-                            <p>Roasted chicken wings with love and Georgian spices</p>
+                            <p data-i18n="menu.items.chicken.desc">Roasted chicken wings with love and Georgian spices</p>
                         </div>
                     </div>
                 </div>
@@ -98,17 +101,17 @@
         </div>
 
         <div class="menu-category" id="soups">
-            <h2>Soups</h2>
+            <h2 data-i18n="menu.categories.soups">Soups</h2>
             <div class="menu-items">
                 <div class="menu-item">
                     <div class="menu-card">
                         <img src="./source/2menu.jpg" alt="Georgian Soup">
                         <div class="menu-card-content">
                             <div class="item-header">
-                                <h3>Georgian Soup</h3>
-                                <span class="price">$18</span>
+                                <h3 data-i18n="menu.items.georgian-soup.name">Georgian Soup</h3>
+                                <span class="price" data-i18n="menu.items.georgian-soup.price">$18</span>
                             </div>
-                            <p>Traditional Georgian soup made with authentic ingredients</p>
+                            <p data-i18n="menu.items.georgian-soup.desc">Traditional Georgian soup made with authentic ingredients</p>
                         </div>
                     </div>
                 </div>
@@ -117,10 +120,10 @@
                         <img src="./source/menu.jpg" alt="Beef Stew Soup">
                         <div class="menu-card-content">
                             <div class="item-header">
-                                <h3>Beef Stew Soup</h3>
-                                <span class="price">$12</span>
+                                <h3 data-i18n="menu.items.beef-stew.name">Beef Stew Soup</h3>
+                                <span class="price" data-i18n="menu.items.beef-stew.price">$12</span>
                             </div>
-                            <p>Slow-cooked soup with rich, authentic flavor</p>
+                            <p data-i18n="menu.items.beef-stew.desc">Slow-cooked soup with rich, authentic flavor</p>
                         </div>
                     </div>
                 </div>
@@ -128,17 +131,17 @@
         </div>
 
         <div class="menu-category" id="desserts">
-            <h2>Desserts</h2>
+            <h2 data-i18n="menu.categories.desserts">Desserts</h2>
             <div class="menu-items">
                 <div class="menu-item">
                     <div class="menu-card">
                         <img src="./source/1menu.jpg" alt="Churchkhela">
                         <div class="menu-card-content">
                             <div class="item-header">
-                                <h3>Churchkhela</h3>
-                                <span class="price">$6</span>
+                                <h3 data-i18n="menu.items.churchkhela.name">Churchkhela</h3>
+                                <span class="price" data-i18n="menu.items.churchkhela.price">$6</span>
                             </div>
-                            <p>Traditional Georgian candy made with grape must and walnuts</p>
+                            <p data-i18n="menu.items.churchkhela.desc">Traditional Georgian candy made with grape must and walnuts</p>
                         </div>
                     </div>
                 </div>
@@ -147,10 +150,10 @@
                         <img src="./source/3menu.jpg" alt="Pelamushi">
                         <div class="menu-card-content">
                             <div class="item-header">
-                                <h3>Pelamushi</h3>
-                                <span class="price">$5</span>
+                                <h3 data-i18n="menu.items.pelamushi.name">Pelamushi</h3>
+                                <span class="price" data-i18n="menu.items.pelamushi.price">$5</span>
                             </div>
-                            <p>Georgian grape pudding with a sweet and tangy flavor</p>
+                            <p data-i18n="menu.items.pelamushi.desc">Georgian grape pudding with a sweet and tangy flavor</p>
                         </div>
                     </div>
                 </div>
@@ -158,17 +161,17 @@
         </div>
 
         <div class="menu-category" id="beverages">
-            <h2>Beverages</h2>
+            <h2 data-i18n="menu.categories.beverages">Beverages</h2>
             <div class="menu-items">
                 <div class="menu-item">
                     <div class="menu-card">
                         <img src="./source/2menu.jpg" alt="Georgian Wine">
                         <div class="menu-card-content">
                             <div class="item-header">
-                                <h3>Georgian Wine</h3>
-                                <span class="price">$8</span>
+                                <h3 data-i18n="menu.items.wine.name">Georgian Wine</h3>
+                                <span class="price" data-i18n="menu.items.wine.price">$8</span>
                             </div>
-                            <p>Selection of traditional Georgian wines</p>
+                            <p data-i18n="menu.items.wine.desc">Selection of traditional Georgian wines</p>
                         </div>
                     </div>
                 </div>
@@ -177,10 +180,10 @@
                         <img src="./source/3menu.jpg" alt="Soft Drinks">
                         <div class="menu-card-content">
                             <div class="item-header">
-                                <h3>Soft Drinks</h3>
-                                <span class="price">$3</span>
+                                <h3 data-i18n="menu.items.soft-drinks.name">Soft Drinks</h3>
+                                <span class="price" data-i18n="menu.items.soft-drinks.price">$3</span>
                             </div>
-                            <p>Coca-Cola, Sprite, Fanta, Water</p>
+                            <p data-i18n="menu.items.soft-drinks.desc">Coca-Cola, Sprite, Fanta, Water</p>
                         </div>
                     </div>
                 </div>
@@ -189,8 +192,9 @@
     </section>
 
     <footer>
-        <p>&copy; 2026 sherekilebi. All rights reserved.</p>
+        <p data-i18n="footer.copyright">&copy; 2026 sherekilebi. All rights reserved.</p>
     </footer>
+    <script src="i18n.js"></script>
     <script src="menu.js"></script>
 </body>
 </html>
