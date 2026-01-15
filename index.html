@@ -1,100 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Discover artisanal coffee and unleash your creativity in our inspiring workshops. Join us for specialty coffee, pastries, and hands-on creative experiences.">
-        <title>Cafe & Workshop - Where Coffee Meets Craft</title>
-        <link rel="stylesheet" href="styles.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-        <link rel="icon" type="image/x-icon" href="source/favicon.ico">
-    </head>
-    <body>
-        <header>
-            <nav>
-            <div class="logo">
-                <a href="#">Cafe & Workshop</a>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sherekilebi - Restaurant</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="./source/logo-transpere.png" type="image/png">
+</head>
+<body>
+    <nav>
+        <div class="logo">sherekilebi</div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero" id="home">
+        <h1>Welcome to sherekilebi</h1>
+        <p>your slogan</p>
+        <a href="#menu" class="btn">View Menu</a>
+    </section>
+
+    <section class="about" id="about">
+        <h2>About Us</h2>
+        <p>At Bella Cucina, we bring the authentic flavors of Italy to your table. With over 20 years of culinary excellence, our chefs craft each dish using traditional recipes and the finest ingredients. Experience the warmth of Italian hospitality in our cozy, elegant atmosphere.</p>
+    </section>
+
+    <section class="menu" id="menu">
+        <h2>Our Signature Dishes</h2>
+        <div class="menu-grid">
+            <div class="menu-card">
+                <img src="./source/3menu.jpg" alt="Margherita Pizza">
+                <div class="menu-card-content">
+                    <h3>Margherita Pizza</h3>
+                    <p>Fresh mozzarella, basil, and tomato sauce on wood-fired crust</p>
+                    <span class="price">$16</span>
+                </div>
             </div>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="menu.html">Menu</a></li>
-                <li><a href="#workshops">Workshops</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-            <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
-                    <div class="line"></div>
-                    <div class="line"></div>
-                    <div class="line"></div>
-                </button>
-            </nav>
-        </header>
-
-        <main>
-            <section class="hero" style="background-image: url('./source/heroimg.png'); background-size: cover; background-position: center; background-attachment: fixed;">
-                <div class="hero-overlay"></div>
-                <div class="hero-content">
-                    <h1>Where Coffee Meets Craft</h1>
-                    <p>Discover artisanal coffee and unleash your creativity in our inspiring workshops.</p>
-                    <div class="hero-buttons">
-                        <a href="menu.html" class="cta-button">Explore Menu</a>
-                        <a href="#workshops" class="cta-button secondary">View Workshops</a>
-                    </div>
+            <div class="menu-card">
+                <img src="./source/2menu.jpg" alt="Pasta Carbonara">
+                <div class="menu-card-content">
+                    <h3>georgian soup</h3>
+                    <p>georgian soup made</p>
+                    <span class="price">$18</span>
                 </div>
-            </section>
-
-            <section class="menu">
-                <h2>Our Menu</h2>
-                <div class="menu-container">
-                    <div class="card">
-                        <img src="./source/espresso.jpg" alt="Espresso">
-                        <h3>Espresso</h3>
-                        <p>A classic shot of concentrated coffee.</p>
-                    </div>
-                    <div class="card">
-                        <img src="./source/latte.jpg" alt="Latte">
-                        <h3>Latte</h3>
-                        <p>Espresso with steamed milk and a layer of foam.</p>
-                    </div>
-                    <div class="card">
-                        <img src="./source/chocolate cake.jpg" alt="Chocolate Cake">
-                        <h3>Chocolate Cake</h3>
-                        <p>Rich and decadent chocolate cake.</p>
-                    </div>
-                    <div class="card">
-                        <img src="./source/Cheesecake.jpg" alt="Cheesecake">
-                        <h3>Cheesecake</h3>
-                        <p>Creamy and delicious cheesecake.</p>
-                    </div>
+            </div>
+            <div class="menu-card">
+                <img src="./source/menu.jpg" alt="Beef Stew">
+                <div class="menu-card-content">
+                    <h3>Beef Stew Soup</h3>
+                    <p>A traditional slow-cooked soup with rich, authentic flavor.</p>
+                    <span class="price">$12</span>
                 </div>
-            </section>
-            <section class="workshops" id="workshops">
-                <h2>Our Workshops</h2>
-                <div class="workshop-container">
-                    <div class="card">
-                        <img src="./source/pottery-workshop.jpg" alt="Pottery Workshop">
-                        <h3>Pottery Workshop</h3>
-                        <p>Learn the art of pottery and create your own unique pieces.</p>
-                    </div>
-                    <div class="card">
-                        <img src="./source/painting-workshop.jpg" alt="Painting Workshop">
-                        <h3>Painting Workshop</h3>
-                        <p>Unleash your inner artist in our guided painting sessions.</p>
-                    </div>
-                    <div class="card">
-                        <img src="./source/barista-workshop.jpg" alt="Barista Workshop">
-                        <h3>Barista Workshop</h3>
-                        <p>Master the art of coffee making from our expert baristas.</p>
-                    </div>
+            </div>
+
+            <div class="menu-card">
+                <img src="./source/1menu.jpg" alt="Tiramisu">
+                <div class="menu-card-content">
+                    <h3>chicken wings</h3>
+                    <p>chinken wings roasted with love </p>
+                    <span class="price">$10</span>
                 </div>
-            </section>
-        </main>
+            </div>
+        </div>
+    </section>
 
-        <footer>
-            <p>&copy; 2025 Cafe & Workshop. All rights reserved.</p>
-        </footer>
+    <footer id="contact">
+        <p>&copy; 2026 sherekilebi. All rights reserved.</p>
+        <p>batumi | Phone: (555) 123-4567 | Email: info@bellacucina.com</p>
+    </footer>
 
-        <script src="script.js"></script>
-    </body>
+    <script src="script.js"></script>
+</body>
 </html>
