@@ -27,49 +27,6 @@
 
 .menu-hero, .menu-category { scroll-margin-top: calc(var(--nav-offset, 60px) + 10px); }
 
-.menu-toc {
-    padding: 1.25rem 10%;
-    background: #fff;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    border-bottom: 1px solid rgba(0,0,0,0.06);
-    position: sticky;
-    top: var(--nav-offset, 60px);
-    z-index: 90;
-    flex-wrap: wrap;
-} 
-
-.toc-toggle {
-    background: #2c2c2c;
-    color: #fff;
-    border: none;
-    padding: 0.6rem 0.9rem;
-    border-radius: 6px;
-    font-size: 1rem;
-    cursor: pointer;
-}
-
-.toc-nav {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.toc-nav a {
-    color: #333;
-    text-decoration: none;
-    padding: 0.45rem 0.6rem;
-    border-radius: 6px;
-    transition: background 0.2s, color 0.2s;
-}
-
-.toc-nav a:hover {
-    background: #f3f3f3;
-    color: #111;
-}
-
 .category-buttons {
     display: flex;
     gap: 0.5rem;
@@ -111,12 +68,15 @@
     font-size: 1.8rem;
     color: #2c2c2c;
     margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #d4af37;
 }
 
 .menu-items {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 320px));
     gap: 1.25rem;
+    justify-content: center;
 }
 
 .menu-item {
@@ -178,32 +138,19 @@
 
 /* small utilities */
 .hidden { display: none !important; }
-/* 
+
 @media (max-width: 768px) {
     .menu-hero h1 { font-size: 1.8rem; }
-    .category-buttons { margin-left: 0; width: 100%; gap: 0.4rem; }
-    .toc-nav { width: 100%; }
-    .menu-toc { padding: 0.75rem 6%; }
-}
-@media (max-width: 560px) {
-    .menu-toc {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0.5rem;
-    }
-
-    .toc-nav {
+    
+    .category-buttons { 
+        margin-left: 0; 
+        width: 100%; 
+        gap: 0.4rem;
         justify-content: center;
     }
-
-    .category-buttons {
-        margin-left: 0;
-        justify-content: center;
-        width: 100%;
-    }
-
+    
     .btn-cat {
         flex: 1;
         text-align: center;
     }
-} */
+}
