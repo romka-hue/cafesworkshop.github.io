@@ -157,6 +157,41 @@ nav a:hover {
     font-weight: bold;
 }
 
+.contact {
+    padding: 5rem 10%;
+    background: #f9f9f9;
+}
+
+.contact h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #2c2c2c;
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+.contact-info h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: #2c2c2c;
+}
+
+.contact-info p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: #555;
+}
+
+.map iframe {
+    border-radius: 10px;
+}
+
 footer {
     background: #2c2c2c;
     color: #fff;
@@ -175,5 +210,9 @@ footer p {
     
     nav ul {
         gap: 1rem;
+    }
+    
+    .contact-container {
+        grid-template-columns: 1fr;
     }
 }
