@@ -169,7 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             'menu.noResults': 'არცერთი ნივთი არ მოიძებნა',
 
-            'index.menu.title': 'ჩვენი სიგნატურო კერძები',
+            'index.menu.title': 'ჩვენი საუკეთესო კერძები',
             'index.menu.items.pizza.name': 'მარგარიტა პიცა',
             'index.menu.items.pizza.desc': 'მარგარიტა: ტკბილი პომოდორი, მოზარელა და ბაზილიკა',
             'index.menu.items.pizza.price': '$16'
