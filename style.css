@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Georgia', serif;
     line-height: 1.6;
@@ -20,6 +24,11 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    transition: transform 0.3s ease;
+}
+
+nav.hidden {
+    transform: translateY(-100%);
 }
 
 nav .logo {
@@ -128,6 +137,7 @@ nav a:hover {
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     transition: transform 0.3s;
+    cursor: pointer;
 }
 
 .menu-card:hover {
@@ -207,6 +217,53 @@ footer p {
     margin-bottom: 0.5rem;
 }
 
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    animation: fadeIn 0.3s;
+}
+
+.modal-content {
+    position: relative;
+    margin: auto;
+    padding: 0;
+    width: 90%;
+    max-width: 800px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.modal-content img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.close:hover {
+    color: #d4af37;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
 @media (max-width: 768px) {
     .hero h1 {
         font-size: 2.5rem;
@@ -214,9 +271,14 @@ footer p {
     
     nav ul {
         gap: 1rem;
+        font-size: 0.9rem;
     }
     
     .contact-container {
         grid-template-columns: 1fr;
+    }
+    
+    .logo img {
+        height: 35px;
     }
 }
